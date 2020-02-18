@@ -1,6 +1,6 @@
-# Clojure: een volwassen alternatief voor Java
+# Clojure: a mature alternative to Java
 
-Dit jaar vieren we het 20-jarige bestaan van Java, de populairste programmeertaal van dit moment. Tenminste, als we uitgaan van de [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). Populariteit verkrijg je echter niet zo maar, en in het begin moesten er wel degelijk zieltjes worden gewonnen. Zo werd Java destijds gepositioneerd als een beter alternatief voor C++:
+This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. At least according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). The become the most popular programming language is hard, and surely in the beginning people needed to be convinced. This is the way Java was positioned as a better alternative to the mainstream language at the time, C++:
 
 > "We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp."
 >-- Guy Steele, co-auteur van de Java specificatie
