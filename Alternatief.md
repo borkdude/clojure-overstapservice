@@ -1,25 +1,27 @@
 # Clojure: a mature alternative to Java
 
-This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. At least according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). The become the most popular programming language is hard, and surely in the beginning people needed to be convinced. This is the way Java was positioned as a better alternative to the mainstream language at the time, C++:
+This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. That is, according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). The become the most popular programming language is a difficult feat, and surely in the beginning lots of people need to be convinced. 
+
+This is the way Java was positioned as a better alternative to the language of choice at the time, C++:
 
 > "We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp."
 >-- Guy Steele, co-auteur van de Java specificatie
 
-En zo kwam het dus dat vele programmeurs de overstap naar Java maakten, waarmee de eerste helft van het verlichtingspad werd afgelegd. Dit artikel gaat over dat tweede gedeelte, de overstap naar Lisp – of in ieder geval: een lisp, volgens Steele het toppunt van productiviteit.
+And so it came to be that many programmers crossed over to Java, moving halfway the path to enlightenment. This article is about the second part, switching to Lisp - or in any case: 'a' lisp, the pinnacle of productivity, according to Steele.
 
-De lisp waar we het over hebben is Clojure, de programmeertaal voor de JVM die in 2007 werd geintroduceerd door Rich Hickey. Op de Java One van 2014 mocht Hickey een [praatje](https://www.youtube.com/watch?v=VSdnJDO-xdg) houden, waar hij begon met de volgende [quote](http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/):
+The lisp we are talking about is Clojure, a programming language for the JVM that was introduced in 2007 by Rich Hickey. At the 2014 edition of Java One, Hickey held a [talk](https://www.youtube.com/watch?v=VSdnJDO-xdg). Het started off with the following [quote](http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/):
 
 > "A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters."
-> -- Adrian Cockroft, (voormalig) Netflix
+> -- Adrian Cockroft, (former) Netflix
 
-De pitch van Rich was dat je met Clojure programma’s kunt schrijven die beter en flexibeler zijn, en dat je er bovendien ook productiever mee bent dan met Java. 
+The pitch of Rich was that Clojure enables you to write programs that are better and more flexible, and above all makes you much more productive than using Java.
 
-Het zal zeker een reden zijn waarom Clojure her en der is omarmd als een volwassen alternatief voor Java. Naast het eerder genoemde Netflix geldt dat bijvoorbeeld ook voor de programmeurs bij [WalmartLabs](http://blog.cognitect.com/blog/2015/6/30/walmart-runs-clojure-at-scale):
+It could certainly be the reason why a big company like Netflix embraced Clojure as a more mature alternative to Java. Another example is [WalmartLabs](http://blog.cognitect.com/blog/2015/6/30/walmart-runs-clojure-at-scale):
 
 > "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java" 
 > -- Anthony Marcar, architect, WalmartLabs
 
-De taal heeft zich inmiddels bewezen in de industrie. Wellicht voor jou ook een reden om over te stappen op Clojure? We zetten hier zeven voordelen van overstappen voor je op een rijtje.
+By now the language has proven itself in the industry. Perhaps is a good reason for you the switch to Clojure? We listed seven advantages of using Clojure for you.
 
 ## 1. Clojure is simpel
 
