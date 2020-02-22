@@ -70,19 +70,18 @@ Here we did not include the lines of code from libraries and frameworks being us
 The advantages of less lines of code are evident: a smaller program contains less bugs, is easier to reason about, and - because of its simplicity - is more robust.
 
 
-## 4. Clojure ondersteunt meerdere platformen
+## 4. Clojure supports multiple platforms
 
-Bij het werken in het Clojure-ecosysteem kun je de kennis van dezelfde programmeertaal hergebruiken in meerdere omgevingen. Voor server side ontwikkeling maak je gebruik van Clojure op de JVM (of in .NET via ClojureCLR).
+The Clojure ecosystem enables you to reuse your knowledge of the language in multiple environments. For server side development you use Clojure on the JVM (or in .NET via ClojureCLR).
 
-Voor front-end development kun je gebruik maken van ClojureScript, wat compileert naar JavaScript. De ClojureScript-compiler kan naast JavaScript voor de browser ook JavaScript genereren voor NodeJS, wat je dan ook weer voor server side toepassingen kunt gebruiken.
+For front end development you use ClojureScript, which compiles to JavaScript. The ClojureScript compiler can be used for programs that run in the browser, but also server side - using NodeJS.
 
-De implementaties van Clojure op diverse omgevingen zijn zoveel mogelijk hetzelfde gehouden en wijken alleen af als dat afgedwongen wordt door beperkingen van de omgeving. Een voorbeeld van zo’n beperking is de afwezigheid van multithreading in een browser. 
+Much effort has been put in keeping Clojure implementations mutually consistent. The only diverge if this is being enforced by platform limitations. One example of such a limitation is the absence off multi-threading in the browser.
 
-Veel Clojure libraries bieden ondersteuning voor zowel Clojure als ClojureScript.
-Dus ook de kennis die je hebt van deze libraries kun je hergebruiken over omgevingen heen. Schrijvers van libraries kunnen sinds de laatste stabiele versie 
-van Clojure (1.7, uitgebracht op 30 juni 2015) gebruik maken van reader conditionals. Dit geeft de mogelijkheid om binnen één bestand meerdere platformen te kunnen bedienen.  
+Many Clojure libraries offer support for both Clojure and ClojureScript. So you can reuse you knowledge on both platforms. Library developers can use _reader conditionals_, that offer the possibility to use the same code file for all target environments.
 
-Ook als applicatie-ontwikkelaar kun je __reader conditionals__ gebruiken om dezelfde code te gebruiken voor meerdere platforms. Een voorbeeld. De volgende code definieert een variabele met de waarde `NaN`. Op het Clojure/JVM-platform is dat `Double/NaN` en in JavaScript `NaN` uit de globale namespace.   
+Application developers can also use reader conditionals to write one piece of code for all platforms. As an example, the following code contains a variable with value `NaN`. On the JVM platform ('clj') it is defined as `Double/NaN`, in JavaScript ('cljs') as `NaN` from the global namespace.
+
 
 ```clojure
 (def not-a-number
@@ -90,6 +89,7 @@ Ook als applicatie-ontwikkelaar kun je __reader conditionals__ gebruiken om deze
      :cljs    js/NaN
      :default nil))
 ```
+
 
 ## 5. Clojure is interactief
 
