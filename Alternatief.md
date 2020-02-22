@@ -108,9 +108,10 @@ One way or the other, Java is not full stack. It is a back end language. It's no
 
 
 ### React
-Met de komst van JavaScript library React is het bouwen van een SPA (single page app) in ClojureScript een fluitje van een cent. Reagent is een ClojureScript library die het schrijven van React-componenten vergemakkelijkt. Door middel van Hiccup-notatie, waarmee je uit een geneste Clojure-datastructuur HTML kan beschrijven, kun je met relatief weinig code een React-component schrijven. 
 
-Dit is een voorbeeld van een component wat het aantal clicks telt op een knop en dit toont in een div:  
+Piggybacking on the success of the JavaScript library React, it is now amazingly easy to build a(n) SPA (Single Page Application) in ClojureScript. [Reagent](http://reagent-project.github.io/) is a ClojureScript that simplifies writing React components. The [Hiccup syntax](https://github.com/weavejester/hiccup/wiki/Syntax), can be used to describe HTML markup using Clojure data structures, only requiring relatively few lines of code.
+
+This is an example of a component that counts the number of clicks on a button, subsequently showing this in a div:
 
 ![component](https://raw.githubusercontent.com/finalist/clojure-overstapservice/master/img/component.png)
 
@@ -128,6 +129,9 @@ Dit is een voorbeeld van een component wat het aantal clicks telt op een knop en
 ```
 
 Met Om, een andere ClojureScript wrapper rondom React, zijn zelfs betere performance benchmarks gehaald dan React zelf. Dit heeft te maken met de efficiënte manier waarop verschillen in state kan worden bepaald in ClojureScript (maar ook in Clojure zelf).
+
+With [Om](https://github.com/omcljs/om), another ClojureScript wrapper for React, it was possible to achieve even better performance than React itself. This having to do with better efficiency in comparing different sets of state in ClojureScript (as well as in Clojure itself).
+
 
 ## 7. Clojure voorkomt callback hell
 
