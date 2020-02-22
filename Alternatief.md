@@ -24,7 +24,7 @@ It could certainly be the reason why a big company like Netflix embraced Clojure
 >
 > -- Anthony Marcar, architect, WalmartLabs
 
-By now the language has proven itself in the industry. Perhaps a good reason for you to switch to Clojure? We listed seven advantages of using Clojure for you.
+By now the language has proven itself in the industry. Perhaps a good reason for you to switch to Clojure? We listed ten advantages of using Clojure for you.
 
 
 ## 1. Clojure is simple
@@ -156,6 +156,78 @@ An example. The following code first retrieves a user's email address via a call
                         email))))]
       (count orders)))
 ```
+
+## 8. Clojure has spec
+
+Since Clojure 1.9, released at the end of 2017, Clojure comes with `spec` which is a library to describe the structure of data and functions with support for validation, error reporting, instrumentation and data generation. Developers coming from Java may find Clojure's lack of static typing hard to digest. While spec does not offer compile time guarantees beyond macro syntax checking, it does offer something much more powerful at runtime.
+
+A small example. We can define a spec that expresses an integer which must be even and is greater than `1000`.
+
+``` clojure
+(s/def ::big-even (s/and int? even? #(> % 1000)))
+```
+
+We can use instrumentation to check if an argument to a function conforms to this specification:
+
+``` clojure
+(defn square-big-even
+  "returns square of x, which must be a big even integer"
+  [x]
+  (* x x))
+
+;; define spec for function arguments:
+(s/fdef square-big-even :args (s/cat :x ::big-even))
+
+;; instrument
+(st/instrument `square-big-even)
+
+(square-big-even 1)
+;; => 1 - failed: even? at: [:x] spec: :user/big-even
+
+(square-big-even 2000)
+;; => 4000000
+```
+
+Error messages from spec can seem a bit cryptic. Libraries like [expound](https://github.com/bhb/expound) can be used to transform spec error data to human-readable text.
+
+The same spec that is used for validation can also be used for data generation and generative testing:
+
+``` clojure
+(gen/sample (s/gen ::big-even))
+;; => (150874 1402248 1562 165164 1146 2300 15226 1564 1686 3298)
+```
+
+## 9. Clojure is a good scripting language
+
+In almost all software projects there will be a need to write shell scripts to automate tasks. Java isn't the most natural fit for a scripting language since it is quite verbose compared to popular choices like Bash and Python. It requires a compilation step and the startup time of the JVM is another hurdle to take. In recent years, several solutions have come up to get a Clojure scripting environment with good startup time:
+
+-  [planck](https://github.com/planck-repl/planck): based on ClojureScript and runs on JavaScriptCode
+- [joker](https://github.com/candid82/joker): a Clojure interpreter in Go
+- [babashka](https://github.com/borkdude/babashka/): a Clojure interpreter written in Clojure itself, compiled with [GraalVM](https://www.graalvm.org/) `native-image`
+
+This is a Babashka script that prints the canonical paths for all directories in the current directory. As you may notice there is interop with the `java.io.File` class, one of the many classes that packaged with babashka.
+
+``` clojure
+#!/usr/bin/env bb
+
+(require '[clojure.java.io :as io])
+
+(defn canonical-dirs [path]
+  (->>
+   (io/file path)
+   (.listFiles)
+   (filter #(.isDirectory %))
+   (map #(.getCanonicalPath %))))
+
+(doseq [dir (canonical-dirs ".")]
+  (println dir))
+```
+
+This script takes about 19ms to execute on my (Michiel's) Macbook Pro 2019.
+
+## 10. Clojure is stable
+
+Like Java, Clojure has a strong focus on API stability. Programs written for Clojure 1.0 in 2009 are still likely to work with Clojure 1.10.1 in 2020. The Clojure community at large adopts the philosophy of Rich Hickey that APIs should grow over time by accretion (adding features), relaxation (requiring less), and bug fixing instead of making breaking changes. Watch the [Spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk) keynote if you want to learn more about this ([transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/Spec_ulation.md)).
 
 ## Epilogue
 
