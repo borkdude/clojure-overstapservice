@@ -31,15 +31,15 @@ Rich Hickey dedicated a whole year of his life to designing Clojure. He decided 
 However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to think pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot more easy to test.
 
 
-## 2. Clojure is data-georiënteerd
+## 2. Clojure is data oriented
 
-Eenvoud uit zich ook in het feit dat Clojure niet object-georiënteerd is, maar data-georiënteerd. Data wordt gerepresenteerd met immutable hashmaps in plaats van classes zoals in Java. Deze datastructuren zijn wel eenvoudig te manipuleren met functies, maar staan daar los van. De filosofie van Clojure sluit daarom aan bij een uitspraak van Alan J. Perlis: 
+Simplicity also stems from the fact that Clojure is not object oriented, it is data oriented. Data is represented by immutable hashmaps instead of classes, like in Java. These data structures are easy to manipulate with functions, but they are mutually independent. Therefore Clojure is philosophically aligned with the following quote from Alan J. Perlis:
 
 > "It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures."
 
-Als je steeds dezelfde datastructuren hergebruikt, hoef je niet telkens het wiel opnieuw uit te vinden om je data in de gewenste vorm – dus classes - te krijgen. Classes vormen bovendien een taal op zichzelf, je moet eerst de methods leren kennen voordat je de datastructuren erachter kunt gebruiken. En omdat de maps immutable zijn, hoef je ook geen rekening te houden met eventuele side-effects bij het aanroepen van methods.
+Object orientation forces you to continually re-invent the wheel, because it requires you to put your data into classes. Instead, with Clojure you can use the same limited set of data structures for all your use cases. Moreover, each new class is a language in itself: you have to learn its methods first in order to access the data structures that are lurking behind. Also, because maps in Clojure are immutable, you don't not have to worry about side effects.
 
-Een klein voorbeeld. In de [Ring](https://github.com/ring-clojure) library, waarmee je webapplicaties kunt schrijven, is een handler niets anders dan een functie die een hashmap verwacht (de request) en een hashmap teruggeeft (de response):
+Here's a small example. In [Ring](https://github.com/ring-clojure), a library for writing web applications, a handler is nothing other than a function that expects a hashmap (the request), and returns a hashmap (the response):
 
 ```clojure
 (defn what-is-my-ip [request]
@@ -48,7 +48,8 @@ Een klein voorbeeld. In de [Ring](https://github.com/ring-clojure) library, waar
    :body (:remote-addr request)})
 ```
 
-De namespace waarin we deze handler definiëren heeft geen afhankelijkheid van de Ring-library. Het enige wat we hoeven te weten is hoe een request er in Ring uitziet, dus welke keys we in de hashmap kunnen verwachten en welke keys we terug moeten geven om een geldige response te kunnen vormen. Alles wat tussen request en response gebeurt is niets anders dan rekenen met normale hashmaps. Dat is toch een stuk eenvoudiger dan het werken met `HttpServletRequest` en `HttpServletResponse`.
+The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hashmap, and which keys we ought to return in order to return a valid response. All that is happening between request and response is nothing other than computations with normal hashmaps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
+
 
 ## 3. Clojure vergt minder regels code
 
