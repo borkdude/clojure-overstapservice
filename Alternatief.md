@@ -202,10 +202,10 @@ The same spec that is used for validation can also be used for data generation a
 In almost all software projects there will be a need to write shell scripts to automate tasks. Java isn't the most natural fit for a scripting language since it is quite verbose compared to popular choices like Bash and Python. It requires a compilation step and the startup time of the JVM is another hurdle to take. In recent years, several solutions have come up to get a Clojure scripting environment with good startup time:
 
 -  [planck](https://github.com/planck-repl/planck): based on ClojureScript and runs on JavaScriptCode
-- [joker](https://github.com/candid82/joker): a Clojure interpreter in Go
+- [joker](https://github.com/candid82/joker): a Clojure interpreter implemented in Go
 - [babashka](https://github.com/borkdude/babashka/): a Clojure interpreter written in Clojure itself, compiled with [GraalVM](https://www.graalvm.org/) `native-image`
 
-This is a Babashka script that prints the canonical paths for all directories in the current directory. As you may notice there is interop with the `java.io.File` class, one of the many classes that packaged with babashka.
+This is a Babashka script that prints the canonical paths for all directories in the current directory. As you may notice there is interop with the `java.io.File` class, one of the many classes that are packaged with babashka.
 
 ``` clojure
 #!/usr/bin/env bb
