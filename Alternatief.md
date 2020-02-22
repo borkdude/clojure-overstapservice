@@ -1,6 +1,6 @@
 # Clojure: a mature alternative to Java
 
-This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. That is, according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). To become the most popular programming language is a difficult feat, and surely in the beginning of Java, lots of people needed to be convinced. 
+This year we celebrate the 25th anniversary of Java, which currently is the most popular programming language. That is, according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). To become the most popular programming language is a difficult feat, and surely in the beginning of Java, lots of people needed to be convinced.
 
 This is the way Java was positioned as a better alternative to the language of choice at the time:
 
@@ -10,7 +10,7 @@ This is the way Java was positioned as a better alternative to the language of c
 
 And so it came to be that many programmers crossed over to Java, moving to about midway on the path to enlightenment. This article is about the subsequent part, switching to Lisp... Or in any case: _a_ lisp, the pinnacle of productivity, according to Steele.
 
-The lisp we are talking about is Clojure, a programming language for the JVM that was introduced in 2007 by Rich Hickey. At the 2014 edition of Java One, Hickey held a [talk](https://www.youtube.com/watch?v=VSdnJDO-xdg). Het started off with the following [quote](http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/):
+The lisp we are talking about is Clojure, a programming language for the JVM that was introduced in 2007 by Rich Hickey. At the 2014 edition of Java One, Hickey held a [talk](https://www.youtube.com/watch?v=VSdnJDO-xdg). He started off with the following [quote](http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/):
 
 > "A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters."
 >
@@ -20,7 +20,7 @@ The pitch of Rich was that Clojure enables you to write programs that are better
 
 It could certainly be the reason why a big company like Netflix embraced Clojure as a more mature alternative to Java. Another example is [WalmartLabs](http://blog.cognitect.com/blog/2015/6/30/walmart-runs-clojure-at-scale):
 
-> "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java" 
+> "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java"
 >
 > -- Anthony Marcar, architect, WalmartLabs
 
@@ -31,12 +31,12 @@ By now the language has proven itself in the industry. Perhaps a good reason for
 
 Rich Hickey dedicated a whole year of his life to designing Clojure. He decided that the language needed to be simple. Not that it should be an _easy_ language. True, if Clojure was easy to learn, it might initially win over some Java programmers, but it's not. Indeed, the path to programmer's enlightenment is never easy. Perhaps even painful, with all those parens, and that silly prefix notation.
 
-However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to think pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot easier to test.
+However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to write pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot easier to test.
 
 
 ## 2. Clojure is data oriented
 
-Simplicity also stems from the fact that Clojure is not object oriented, it is data oriented. Data is represented by immutable hashmaps instead of classes, like in Java. These data structures are easy to manipulate with functions, but they are mutually independent. Therefore Clojure is philosophically aligned with the following quote from Alan J. Perlis:
+Simplicity also stems from the fact that Clojure is not object oriented, it is data oriented. Data is represented by immutable hash-maps instead of classes, like in Java. These data structures are easy to manipulate with functions, but they are mutually independent. Therefore Clojure is philosophically aligned with the following quote from Alan J. Perlis:
 
 > "It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures."
 
@@ -51,7 +51,7 @@ Here's a small example. In [Ring](https://github.com/ring-clojure), a library fo
    :body (:remote-addr request)})
 ```
 
-The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hashmap, and which keys we ought to return in order to yield a valid response. All that is happening between the request and the response is nothing else than computations with normal hashmaps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
+The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hash-map, and which keys we ought to return in order to yield a valid response. All that is happening between the request and the response is nothing else than computations with normal hash-maps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
 
 
 ## 3. Clojure requires less lines of code
@@ -107,7 +107,7 @@ All this means that Clojure is very suitable for live coding. With Clojure you c
 
 ## 6. Clojure is full stack
 
-One way or the other, Java is not full stack. It is a back end language. It's not that people didn't try to become relevant at the front end as well. But seriously, who is still developing applications using AWT, Swing or JavaFX? Likewise, Clojure was initially conceived as an alternative back end language. With the advent of ClojureScript, and the subsequent release of many front end libraries and tools, you can decidedly consider Clojure a full stack language. It also introduced a lot of interesting elements that considerably improves the experience for full stack developers.
+One way or the other, Java is not full stack. It is a back-end language. It's not that people didn't try to become relevant at the front end as well. But seriously, who is still developing applications using AWT, Swing or JavaFX? Likewise, Clojure was initially conceived as an alternative back end language. With the advent of ClojureScript, and the subsequent release of many front end libraries and tools, you can decidedly consider Clojure a full stack language. It also introduced a lot of interesting elements that considerably improves the experience for full stack developers.
 
 
 ### React
