@@ -156,6 +156,6 @@ An example. The following code first retrieves a user's email address via a call
       (count orders)))
 ```
 
-## Slot
+## Epilogue
 
-Java bestaat 20 jaar. Inmiddels zijn vele alternatieve programmeertalen verschenen waarmee je applicaties voor de JVM kunt schrijven. Van de Cambrische explosie van nieuwe talen die ontstond, halverwege het vorige decennium, is er een beperkt aantal die de status van volwassenheid hebben bereikt: Groovy, Scala, maar ook Clojure. In dit artikel hebben we een aantal voordelen benoemd waarmee Clojure zich onderscheidt van de rest. Mocht dit je hebben overtuigd, de beste manier om met Clojure aan de slag te gaan is er gewoon mee te beginnen. Om de drempel zo klein mogelijk te maken, kun je gebruik maken van onze [overstapservice](README.md).
+Java, the programming language, is 25 years old. During all those years, many alternatives to Java have come and go. But from all the ones that have appeared in the 'Cambrian explosion' of langues during the previous decade, only a few have reached maturity: Groovy, Scala, but also Clojure. In this article we have listed a number of features that positively separates Clojure from the rest. If that was convincing too you, the best way to learn Clojure is to actually use it.
