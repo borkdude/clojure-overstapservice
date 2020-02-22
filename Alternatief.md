@@ -133,13 +133,14 @@ Met Om, een andere ClojureScript wrapper rondom React, zijn zelfs betere perform
 With [Om](https://github.com/omcljs/om), another ClojureScript wrapper for React, it was possible to achieve even better performance than React itself. This having to do with better efficiency in comparing different sets of state in ClojureScript (as well as in Clojure itself).
 
 
-## 7. Clojure voorkomt callback hell
+## 7. Clojure prevents callback hell
 
-Een van de problemen waar JavaScript-developers mee worstelen is het fenomeen callback hell. Een browser heeft maar één thread. Daarom moeten we werken met geneste callbacks. Als we callbacks  diep nesten, wordt de code steeds slechter leesbaar. 
+One of the problems that Javascript developer have to deal with is a phenomenon called 'callback hell'. A browser program only has one thread. That is the reason why we need to work with nested callbacks. As we apply deeper level of nesting, code readability will be increasingly worse.
 
-Clojure geeft hiervoor een oplossing in de vorm van de core.async library, die het werken met asynchrone code vereenvoudigt. Uiteraard werkt ook deze library op zowel server als client. De bouwblokken van core.async zijn channels, buffers en go-blocks. Go-blocks zijn source-transformaties die de illusie geven van synchrone code, maar uiteindelijk geneste callbacks opleveren. 
+The Clojure solution consists of a library, [core.async](https://github.com/clojure/core.async), which - as you might guess by now - simplifies working with asynchronous code. And it also goes without saying that this library works both on the server as in the client. Its building blocks are channels, buffers and go blocks. Go blocks are source transformations that offers the appearance of synchronous code, but ultimately translated to nested callbacks.
 
-Een voorbeeld. De volgende code haalt eerst het e-mailadres op van een gebruiker via een REST-API call. Hiervoor gebruiken we de library [http-cljs](https://github.com/r0man/cljs-http), die het maken van Ajax calls combineert met core.async. Als resultaat van een http-call krijgen we een een channel terug, waaruit we het resultaat uit kunnen lezen met de <! (take) operatie. Vervolgens gebruiken we het e-mailadres in een tweede call om de bestellingen van deze gebruiker op te halen. Als uiteindelijk resultaat geven we het aantal bestellingen terug.
+An example. The following code first retrieves a user's email address via a call to a REST API. For this the library [http-cljs](https://github.com/r0man/cljs-http) is being used, that combines the Ajax calls with core.async. As a return value we receive a channel, from which we can read the result using the <! (take) operation. Next we use the email address in a second call to fetch the orders for this user.
+
 
 ```clojure
 (go (let [email (:body
