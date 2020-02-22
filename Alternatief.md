@@ -93,13 +93,14 @@ Application developers can also use reader conditionals to write one piece of co
 
 ## 5. Clojure is interactief
 
-Clojure is een interactieve programmeertaal. Via een REPL (read-eval-print loop) krijg je direct feedback. Tijdens het ontwikkelen kun je functies herdefiniëren en opnieuw testen terwijl de applicatie draait, zonder een nieuwe compileercyclus te starten. Een plugin zoals JRebel voor hot code reloading is dus niet nodig. 
+Clojure is an interactive programming language. Through the REPL (read-eval-print loop) you receive immediate feedback. Whilst developing you can redefine you functions and re-test them, while the application is running - without even starting a new compile cyclus. Tools such as JRebel or Quarkus for hot code reloading is not necessary.
 
-Het is zelfs mogelijk om over het netwerk in te loggen op een REPL-sessie en zo de stand van zaken te inspecteren op een productieserver. 
+It's even possible to cross the network and hook up to a remote REPL-session in order to inspect the state of the application on a production server.
 
-Ook ClojureScript kent het concept van een REPL waarmee je code in je browser (of NodeJS) kan testen en herdefiniëren. Een tool als [Figwheel](https://github.com/bhauman/lein-figwheel) maakt het tevens mogelijk om gewijzigde ClojureScript meteen in je browser te zien, zonder dat je de applicatie in je browser moet verversen. 
+ClojureScript also supports REPL sessions that enables you to connect to the code running in the browser (or Node), so you can test and modify your program. A tool like [Figwheel](https://github.com/bhauman/lein-figwheel) also enables you to immediately view the result of the modified ClojureScript, without even having too refresh your browser.
 
-Dit alles maakt Clojure uitermate geschikt voor live coding. Je kan met Clojure zelfs live muziek maken. Bekijk hiervoor de library [Overtone](http://overtone.github.io/).
+All this means that Clojure is very suitable for live coding. With Clojure you can even produce live music. For this check out the library [Overtone](http://overtone.github.io/).
+
 
 ## 6. Clojure is full stack
 
