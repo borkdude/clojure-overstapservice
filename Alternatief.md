@@ -51,23 +51,24 @@ Here's a small example. In [Ring](https://github.com/ring-clojure), a library fo
 The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hashmap, and which keys we ought to return in order to return a valid response. All that is happening between request and response is nothing other than computations with normal hashmaps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
 
 
-## 3. Clojure vergt minder regels code
+## 3. Clojure requires less lines of code
 
-Met Clojure heb je geen last van de overhead die object-georiënteerde talen met zich meebrengen. Overhead die bestaat uit het schrijven van interface- en implementatiecode om je datastructuren te ‘beschermen’. Je hebt dus minder Clojure-regels dan Java-regels nodig om precies hetzelfde te bereiken. 
+When using Clojure you do not have to carry the burden of the immense overhead that occurs with object oriented languages. Such overhead consists of writing the interface and implementation code to 'protect' your data structures. This means that you need less Clojure lines of code than Java liness of code in order to achieve the same result.
 
-Maar dat is niet de enige reden waarom je minder regels code nodig hebt. Clojure is immers een __functionele programmeertaal__, en daarvan weten we dat ze expressiever zijn dan imperatieve programmeertalen. Zo hoef je geen loops of iteraties uit te schrijven omdat het volstaat om _higher order_ functies, zoals map, filter en reduce, toe te passen op je collecties. Sinds versie 8 beschikt Java over lambda's en de Streams API. De winst van functioneel programmeren ten op zichte van Java 7 is al vrij snel voelbaar zodra je met transformaties over collecties aan de slag gaat.
+Another reason why you need to write less lines of code is because Clojure is a _functional programming language_. Such languages are known to be more expressive than imperative programming languages. For instance, in Clojure you do not have to write loops or iterations for computations on collections. All you have to do is to apply _higher order_ functions, such as  map, filter, and reduce to your collections. Of course, as of version 8, the Java language already incorporated features such as lambda's, and higher order functions via the Streams API. 
 
-Omdat Clojure een lisp is, kun je boilerplate-code voorkomen door gebruik te maken van __macro’s__. Macros zijn functies die compile-time worden uitgevoerd en als argumenten expressies kunnen ontvangen. Expressies worden gerepresenteerd als data, die je ook kunt transformeren met behulp van Clojure-functies.  Dit komt dus neer op code-generatie, zodat je boilerplate niet zelf hoeft te schrijven.  
+Because of the fact that Clojure is a lisp, you can prevent writing boilerplate code by using _macro's_. These are functions that are executed at compile time, and that accept expressions as arguments. Expressions are being represented as data, that you can also transform using Clojure functions. All this amounts to code-generation, so you daon't have to write the boilerplate code yourself.
 
-De website [TodoBackend](http://www.todobackend.com/) bevat vergelijkbare implementaties van een Todo-list-API. Als we de implementatie in Clojure afzetten tegen de implementaties in Java 7 en 8 zien we het volgende:
+The website [TodoBackend](http://www.todobackend.com/) contains several different implementations of the Todo-list API. You can also use it to compare languges. When comparing the Clojure implementation with Java 7 and 8, we see the following:
 
-* Clojure: 168 regels Clojure (inclusief buildconfiguratie)
-* Java 7 + Spring MVC:  555 regels XML, 228 regels Java, 56 regels Groovy
-* Java 8 + Spring 4 Boot: 200 regels Java, 37 regels Groovy
+* Clojure: 168 lines of Clojure (including build configuration)
+* Java 7 + Spring MVC:  555 lines of XML, 228 Java lines of code, 56 lines of Groovy
+* Java 8 + Spring 4 Boot: 200 lines of Java, 37 lines of Groovy
 
-We hebben hier het aantal regels code van de gebruikte libraries en frameworks niet meegeteld. Onze verwachting is dat Clojure er dan nog beter van af zou komen.
+Here we did not include the lines of code from libraries and frameworks being used. If we did, we expect even better results for Clojure.
 
-De voordelen van minder regels code zijn evident: kleinere programma’s hebben minder bugs, zijn beter te begrijpen en zijn door de eenvoud ook robuuster.
+The advantages of less lines of code are evident: a smaller program contains less bugs, is easier to reason about, and - because of its simplicity - is more robust.
+
 
 ## 4. Clojure ondersteunt meerdere platformen
 
