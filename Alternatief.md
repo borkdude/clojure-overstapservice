@@ -104,7 +104,8 @@ All this means that Clojure is very suitable for live coding. With Clojure you c
 
 ## 6. Clojure is full stack
 
-Hoe je het ook wendt of keert, Java is niet full stack, het is een taal voor de back-end. Wel is geprobeerd om een plekje te veroveren aan de client side, maar wie ontwikkelt er tegenwoordig nog applicaties in AWT, Swing of JavaFX? Evenzo is Clojure begonnen als  alternatief voor back-end, maar met de komst van ClojureScript, en een hoop front-end libraries en tools kun je nu recht spreken van een full stack programmeertaal. Bovendien biedt de stack interessante elementen waarmee full stack ontwikkeling aanzienlijk kan worden verbeterd. 
+One way or the other, Java is not full stack. It is a back end language. It's not that people didn't try to become relevant at the front end as well. But seriously, who is still developing applications using AWT, Swing or JavaFX? Likewise, Clojure was initially conceived as an alternative back end language. With the advent of ClojureScript, and the subsequent release of many front end libraries and tools, you can decidedly consider Clojure a full stack language. It even introduced a lot of interesting elements that considerably improves the experience for full stack developers.
+
 
 ### React
 Met de komst van JavaScript library React is het bouwen van een SPA (single page app) in ClojureScript een fluitje van een cent. Reagent is een ClojureScript library die het schrijven van React-componenten vergemakkelijkt. Door middel van Hiccup-notatie, waarmee je uit een geneste Clojure-datastructuur HTML kan beschrijven, kun je met relatief weinig code een React-component schrijven. 
