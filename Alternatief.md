@@ -23,11 +23,13 @@ It could certainly be the reason why a big company like Netflix embraced Clojure
 
 By now the language has proven itself in the industry. Perhaps is a good reason for you the switch to Clojure? We listed seven advantages of using Clojure for you.
 
-## 1. Clojure is simpel
 
-Rich Hickey heeft een jaar van zijn leven gewijd aan het ontwerpen van een taal die vooral simpel moest zijn. Simpel betekent daarbij niet: gemakkelijk (‘easy’). Want het was zeker niet zijn doel om een taal te ontwerpen die eenvoudig is voor Java-programmeurs, want dan kom je niet verder. Zijn doel was om Javanen te helpen om programmeursnirvana te bereiken, en de weg daarheen kan voor sommigen best pijnlijk zijn, met al die haakjes en die prefix-notatie. Maar als je daar eenmaal aan gewend bent dan ontdek je dat de syntax verbazingwekkend simpel is.
+## 1. Clojure is simple
 
-De eenvoud van Clojure uit zich bijvoorbeeld in de manier waarop je functies schrijft. Clojure dwingt je in de richting van pure functies, dus functies zonder side effects. Dat wordt bereikt door middel van _immutability_. Als je uit kunt gaan van immutable values, is je code beter te begrijpen, en makkelijker te testen.
+Rich Hickey dedicated a whole year of his life to designing Clojure. He decided that the language needed to be simple. Not that it should be an _easy_ language. True, if Clojure was easy to learn, it might initially win over some Java programmers, but it's not. Indeed, the path to programmer's enlightenment is never easy. Perhaps even painful, with all those parens, and that silly prefix notation.
+
+However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to think pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot more easy to test.
+
 
 ## 2. Clojure is data-georiënteerd
 
