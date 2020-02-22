@@ -1,17 +1,19 @@
 # Clojure: a mature alternative to Java
 
-This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. That is, according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). The become the most popular programming language is a difficult feat, and surely in the beginning lots of people need to be convinced. 
+This year we celebrate the 25th anniversary of Java, which currently is the most populair programming language. That is, according to the [TIOBE index](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html). To become the most popular programming language is a difficult feat, and surely in the beginning of Java, lots of people needed to be convinced. 
 
-This is the way Java was positioned as a better alternative to the language of choice at the time, C++:
+This is the way Java was positioned as a better alternative to the language of choice at the time:
 
 > "We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp."
->-- Guy Steele, co-auteur van de Java specificatie
+>
+> -- Guy Steele, co-author of the Java language specification
 
-And so it came to be that many programmers crossed over to Java, moving halfway the path to enlightenment. This article is about the second part, switching to Lisp - or in any case: 'a' lisp, the pinnacle of productivity, according to Steele.
+And so it came to be that many programmers crossed over to Java, moving to about midway on the path to enlightenment. This article is about the subsequent part, switching to Lisp... Or in any case: _a_ lisp, the pinnacle of productivity, according to Steele.
 
 The lisp we are talking about is Clojure, a programming language for the JVM that was introduced in 2007 by Rich Hickey. At the 2014 edition of Java One, Hickey held a [talk](https://www.youtube.com/watch?v=VSdnJDO-xdg). Het started off with the following [quote](http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/):
 
 > "A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters."
+>
 > -- Adrian Cockroft, (former) Netflix
 
 The pitch of Rich was that Clojure enables you to write programs that are better and more flexible, and above all makes you much more productive than using Java.
@@ -19,16 +21,17 @@ The pitch of Rich was that Clojure enables you to write programs that are better
 It could certainly be the reason why a big company like Netflix embraced Clojure as a more mature alternative to Java. Another example is [WalmartLabs](http://blog.cognitect.com/blog/2015/6/30/walmart-runs-clojure-at-scale):
 
 > "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java" 
+>
 > -- Anthony Marcar, architect, WalmartLabs
 
-By now the language has proven itself in the industry. Perhaps is a good reason for you the switch to Clojure? We listed seven advantages of using Clojure for you.
+By now the language has proven itself in the industry. Perhaps a good reason for you to switch to Clojure? We listed seven advantages of using Clojure for you.
 
 
 ## 1. Clojure is simple
 
 Rich Hickey dedicated a whole year of his life to designing Clojure. He decided that the language needed to be simple. Not that it should be an _easy_ language. True, if Clojure was easy to learn, it might initially win over some Java programmers, but it's not. Indeed, the path to programmer's enlightenment is never easy. Perhaps even painful, with all those parens, and that silly prefix notation.
 
-However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to think pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot more easy to test.
+However, once you've reached Nirvana you will find that Clojure's syntax is actually very simple. One example of its simplicity is writing functions. Clojure encourages you to think pure functions - that is, functions that yield no side effects. Rich Hickey recognized that the feature of _immutability_ will help achieve this. Because if your variables are guaranteed to be immutable, your code will be better to reason about, and a lot easier to test.
 
 
 ## 2. Clojure is data oriented
@@ -37,7 +40,7 @@ Simplicity also stems from the fact that Clojure is not object oriented, it is d
 
 > "It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures."
 
-Object orientation forces you to continually re-invent the wheel, because it requires you to put your data into classes. Instead, with Clojure you can use the same limited set of data structures for all your use cases. Moreover, each new class is a language in itself: you have to learn its methods first in order to access the data structures that are lurking behind. Also, because maps in Clojure are immutable, you don't not have to worry about side effects.
+Object orientation forces you to continually re-invent the wheel, because it requires you to put your data into classes. Instead, with Clojure you can use the same limited set of data structures for all your use cases. Moreover, each new class in OO is a language in itself: you have to learn its methods first in order to access the data structures that are lurking behind. Also, because maps in Clojure are immutable, you don't not have to worry about side effects.
 
 Here's a small example. In [Ring](https://github.com/ring-clojure), a library for writing web applications, a handler is nothing other than a function that expects a hashmap (the request), and returns a hashmap (the response):
 
@@ -48,18 +51,18 @@ Here's a small example. In [Ring](https://github.com/ring-clojure), a library fo
    :body (:remote-addr request)})
 ```
 
-The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hashmap, and which keys we ought to return in order to return a valid response. All that is happening between request and response is nothing other than computations with normal hashmaps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
+The namespace, which is the scope for this handler, is not dependent upon the Ring library. The only thing we need to know is what a request in Ring should look like, i.e. which keys we may expect in the hashmap, and which keys we ought to return in order to yield a valid response. All that is happening between the request and the response is nothing else than computations with normal hashmaps. This surely is a lot more simple that working with `HttpServletRequest` and `HttpServletResponse`.
 
 
 ## 3. Clojure requires less lines of code
 
-When using Clojure you do not have to carry the burden of the immense overhead that occurs with object oriented languages. Such overhead consists of writing the interface and implementation code to 'protect' your data structures. This means that you need less Clojure lines of code than Java liness of code in order to achieve the same result.
+When using Clojure you do not have to carry the burden of the immense overhead that occurs with object oriented languages. Such overhead consists of writing the interface and implementation code to 'protect' your data structures. This means that you need less Clojure lines of code than Java lines of code, in order to achieve the same result.
 
-Another reason why you need to write less lines of code is because Clojure is a _functional programming language_. Such languages are known to be more expressive than imperative programming languages. For instance, in Clojure you do not have to write loops or iterations for computations on collections. All you have to do is to apply _higher order_ functions, such as  map, filter, and reduce to your collections. Of course, as of version 8, the Java language already incorporated features such as lambda's, and higher order functions via the Streams API. 
+Another reason why you need to write less lines of code is because Clojure is a _functional_ programming language. Such languages are known to be more expressive than imperative programming languages. For instance, in Clojure you do not have to write loops or iterations for computations on collections. All you have to do is to apply _higher order_ functions, such as  map, filter, and reduce to your collections. 
 
-Because of the fact that Clojure is a lisp, you can prevent writing boilerplate code by using _macro's_. These are functions that are executed at compile time, and that accept expressions as arguments. Expressions are being represented as data, that you can also transform using Clojure functions. All this amounts to code-generation, so you daon't have to write the boilerplate code yourself.
+Of course, as of version 8, the Java language already incorporated functional features such as lambda's, and higher order functions via the Streams API. But there's more. Because of the fact that Clojure is a lisp, you can prevent writing boilerplate code by using _macro's_. These are functions that are executed at compile time, and that accept expressions as arguments. Expressions are being represented as data, that you can also transform using Clojure functions. All this amounts to code-generation, so you don't have to write the boilerplate code yourself.
 
-The website [TodoBackend](http://www.todobackend.com/) contains several different implementations of the Todo-list API. You can also use it to compare languges. When comparing the Clojure implementation with Java 7 and 8, we see the following:
+The website [TodoBackend](http://www.todobackend.com/) contains several different implementations of the Todo-list API. You can also use it to compare languages. When comparing the Clojure implementation with Java 7 and 8, we see the following:
 
 * Clojure: 168 lines of Clojure (including build configuration)
 * Java 7 + Spring MVC:  555 lines of XML, 228 Java lines of code, 56 lines of Groovy
@@ -76,9 +79,9 @@ The Clojure ecosystem enables you to reuse your knowledge of the language in mul
 
 For front end development you use ClojureScript, which compiles to JavaScript. The ClojureScript compiler can be used for programs that run in the browser, but also server side - using NodeJS.
 
-Much effort has been put in keeping Clojure implementations mutually consistent. The only diverge if this is being enforced by platform limitations. One example of such a limitation is the absence off multi-threading in the browser.
+Much effort has been put in keeping Clojure implementations mutually consistent. They only diverge because of platform limitations. One example of such a limitation is the absence of multi-threading in the browser.
 
-Many Clojure libraries offer support for both Clojure and ClojureScript. So you can reuse you knowledge on both platforms. Library developers can use _reader conditionals_, that offer the possibility to use the same code file for all target environments.
+Many Clojure libraries offer support for both Clojure and ClojureScript. So you can reuse your knowledge on both platforms. Library developers can use _reader conditionals_, that offer the possibility to use the same code file for all target environments.
 
 Application developers can also use reader conditionals to write one piece of code for all platforms. As an example, the following code contains a variable with value `NaN`. On the JVM platform ('clj') it is defined as `Double/NaN`, in JavaScript ('cljs') as `NaN` from the global namespace.
 
@@ -91,25 +94,25 @@ Application developers can also use reader conditionals to write one piece of co
 ```
 
 
-## 5. Clojure is interactief
+## 5. Clojure is interactive
 
-Clojure is an interactive programming language. Through the REPL (read-eval-print loop) you receive immediate feedback. Whilst developing you can redefine you functions and re-test them, while the application is running - without even starting a new compile cyclus. Tools such as JRebel or Quarkus for hot code reloading is not necessary.
+Clojure is an interactive programming language. Through the REPL (read-eval-print loop) you receive immediate feedback. Whilst developing you can redefine you functions and re-test them, even while the application is running - without starting a new compile cycle. Tools such as JRebel or Quarkus for hot code reloading is not necessary.
 
 It's even possible to cross the network and hook up to a remote REPL-session in order to inspect the state of the application on a production server.
 
-ClojureScript also supports REPL sessions that enables you to connect to the code running in the browser (or Node), so you can test and modify your program. A tool like [Figwheel](https://github.com/bhauman/lein-figwheel) also enables you to immediately view the result of the modified ClojureScript, without even having too refresh your browser.
+ClojureScript also supports REPL sessions that enables you to connect to the code running in the browser (or Node), so you can test and modify your program. A tool like [Figwheel](https://github.com/bhauman/lein-figwheel) also enables you to immediately view the result of the modified ClojureScript, without even having to refresh your browser.
 
 All this means that Clojure is very suitable for live coding. With Clojure you can even produce live music. For this check out the library [Overtone](http://overtone.github.io/).
 
 
 ## 6. Clojure is full stack
 
-One way or the other, Java is not full stack. It is a back end language. It's not that people didn't try to become relevant at the front end as well. But seriously, who is still developing applications using AWT, Swing or JavaFX? Likewise, Clojure was initially conceived as an alternative back end language. With the advent of ClojureScript, and the subsequent release of many front end libraries and tools, you can decidedly consider Clojure a full stack language. It even introduced a lot of interesting elements that considerably improves the experience for full stack developers.
+One way or the other, Java is not full stack. It is a back end language. It's not that people didn't try to become relevant at the front end as well. But seriously, who is still developing applications using AWT, Swing or JavaFX? Likewise, Clojure was initially conceived as an alternative back end language. With the advent of ClojureScript, and the subsequent release of many front end libraries and tools, you can decidedly consider Clojure a full stack language. It also introduced a lot of interesting elements that considerably improves the experience for full stack developers.
 
 
 ### React
 
-Piggybacking on the success of the JavaScript library React, it is now amazingly easy to build a(n) SPA (Single Page Application) in ClojureScript. [Reagent](http://reagent-project.github.io/) is a ClojureScript that simplifies writing React components. The [Hiccup syntax](https://github.com/weavejester/hiccup/wiki/Syntax), can be used to describe HTML markup using Clojure data structures, only requiring relatively few lines of code.
+Piggybacking on the success of the JavaScript library React, it is now amazingly easy to build a(n) SPA (Single Page Application) in ClojureScript. [Reagent](http://reagent-project.github.io/) is a ClojureScript library that simplifies writing React components. The [Hiccup syntax](https://github.com/weavejester/hiccup/wiki/Syntax), for describing HTML markup using Clojure data structures, requires very few lines of code.
 
 This is an example of a component that counts the number of clicks on a button, subsequently showing this in a div:
 
@@ -128,18 +131,16 @@ This is an example of a component that counts the number of clicks on a button, 
                           (js/document.getElementById "app"))
 ```
 
-Met Om, een andere ClojureScript wrapper rondom React, zijn zelfs betere performance benchmarks gehaald dan React zelf. Dit heeft te maken met de efficiënte manier waarop verschillen in state kan worden bepaald in ClojureScript (maar ook in Clojure zelf).
-
-With [Om](https://github.com/omcljs/om), another ClojureScript wrapper for React, it was possible to achieve even better performance than React itself. This having to do with better efficiency in comparing different sets of state in ClojureScript (as well as in Clojure itself).
+With [Om](https://github.com/omcljs/om), another ClojureScript wrapper for React, it was possible to achieve even [better performance](https://swannodette.github.io/2013/12/17/the-future-of-javascript-mvcs) than React itself. This having to do with better efficiency in comparing different sets of state in ClojureScript (as well as in Clojure itself).
 
 
 ## 7. Clojure prevents callback hell
 
-One of the problems that Javascript developer have to deal with is a phenomenon called 'callback hell'. A browser program only has one thread. That is the reason why we need to work with nested callbacks. As we apply deeper level of nesting, code readability will be increasingly worse.
+One of the problems that Javascript developers have to deal with is a phenomenon called 'callback hell'. A browser program only has one thread. That is the reason why we need to work with nested callbacks. As we apply deeper levels of nesting, code readability will be increasingly worse.
 
-The Clojure solution consists of a library, [core.async](https://github.com/clojure/core.async), which - as you might guess by now - simplifies working with asynchronous code. And it also goes without saying that this library works both on the server as in the client. Its building blocks are channels, buffers and go blocks. Go blocks are source transformations that offers the appearance of synchronous code, but ultimately translated to nested callbacks.
+The Clojure solution consists of a library, [core.async](https://github.com/clojure/core.async), which - as you might have guessed by now - simplifies working with asynchronous code. It also goes without saying that this library works both on the server as in the client. Its building blocks are channels, buffers and go blocks. Go blocks are source transformations that offer the appearance of synchronous code, but ultimately translate to nested callbacks.
 
-An example. The following code first retrieves a user's email address via a call to a REST API. For this the library [http-cljs](https://github.com/r0man/cljs-http) is being used, that combines the Ajax calls with core.async. As a return value we receive a channel, from which we can read the result using the <! (take) operation. Next we use the email address in a second call to fetch the orders for this user.
+An example. The following code first retrieves a user's email address via a call to a REST API. For this the library [http-cljs](https://github.com/r0man/cljs-http) is being used, that combines the Ajax calls with core.async. As a return value we receive a channel, from which we can read the result using the `<!` (take) operation. Next we use the email address in a second call, to fetch the orders for this user.
 
 
 ```clojure
@@ -158,4 +159,4 @@ An example. The following code first retrieves a user's email address via a call
 
 ## Epilogue
 
-Java, the programming language, is 25 years old. During all those years, many alternatives to Java have come and go. But from all the ones that have appeared in the 'Cambrian explosion' of langues during the previous decade, only a few have reached maturity: Groovy, Scala, but also Clojure. In this article we have listed a number of features that positively separates Clojure from the rest. If that was convincing too you, the best way to learn Clojure is to actually use it.
+Java, the programming language, is 25 years old. During all those years, many alternatives to Java have come and go. But from all the ones that have appeared since the 'Cambrian explosion' of languages during the previous decade, only a few have reached maturity: Groovy, Scala, but also Clojure. In this article we have listed a number of features that positively separates Clojure from the rest. If you are convinced, the best way to learn Clojure is to actually use it.
